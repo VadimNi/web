@@ -8,5 +8,24 @@
     alpha:<span id="alpha"></span><br>
     beta:<span id="beta"></span><br>
     gamma:<span id="gamma"></span><br>
-</body>
+  </body>
+  <script>
+
+//get orientation info
+if (window.DeviceOrientationEvent) 
+{
+    window.addEventListener("deviceorientation", function () 
+    {
+        processGyro(event.alpha, event.beta, event.gamma);  
+    }, true);
+} 
+
+
+function processGyro(alpha,beta,gamma)
+{
+	document.getElementById("alpha").innerHTML=alpha;
+	document.getElementById("beta").innerHTML=beta;
+	document.getElementById("gamma").innerHTML =gamma;
+}
+</script>
 </html>
